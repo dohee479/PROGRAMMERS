@@ -22,5 +22,25 @@ def solution(board, moves):
                         visited[index] = False
     return answer
 
+def solution(board, moves):
+    answer = 0
+    basket = []
+    for move in moves:
+        for i, doll in enumerate(board):
+            if doll[move - 1]:
+                if basket:
+                    if basket[-1] == doll[move - 1]:
+                        basket.pop()
+                        doll[move - 1] = 0
+                        answer += 2
+                    else:
+                        basket.append(doll[move - 1])
+                        doll[move - 1] = 0
+                else:
+                    basket.append(doll[move - 1])
+                    doll[move - 1] = 0
+                break
+    return answer
+
 
 print(solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]], [1,5,3,5,1,2,1,4]))
