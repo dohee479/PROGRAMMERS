@@ -9,9 +9,6 @@ def solution(progresses, speeds):
         if i:
             if value <= compare:
                 cnt += 1
-            elif value == compare:
-                answer.append(cnt + 1)
-                cnt = 0
             else:
                 compare = value
                 answer.append(cnt)
