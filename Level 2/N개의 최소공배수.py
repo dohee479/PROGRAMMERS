@@ -1,20 +1,13 @@
+# 유클리드 호제법을 이용하여 풀려했으나 실패
 def solution(arr):
-    answer = arr[0]
-    arr.sort()
-
-    # 유클리드 호제법 이해하자.
-    def euclid(n1, n2):
-        while n1:
-            n1, n2 = n2 % n1, n1
-        return n2
-
-    gcd = arr[0]
-    for i in arr:
-        gcd = euclid(gcd, i)
-
-    for i in range(1, len(arr)):
-        answer *= (arr[i] // gcd)
+    answer = 1
+    for i in range(len(arr)):
+        num = arr[i]
+        for j in range(i, len(arr)):
+            if not (arr[j] % num):
+                arr[j] = arr[j] // num
+        answer *= num
     return answer
 
 
-print(solution([3, 7, 10]))
+print(solution([3,4,9,16]))
