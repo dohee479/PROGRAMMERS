@@ -13,3 +13,8 @@ def solution(n):
 
 
 print(solution(15))
+
+
+# n이 주어졌을 때, 1부터 n까지의 수 중 홀수이면서 n의 약수인 개수를 구한다.
+def expressions(num):
+    return len([i  for i in range(1,num+1,2) if num % i is 0])
