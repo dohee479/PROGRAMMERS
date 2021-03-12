@@ -18,6 +18,3 @@ def nextBigNumber(n):
     while countone(n) != countone(n+i):
         i += 1
     return n + i
-
-
-print(nextBigNumber(78))
