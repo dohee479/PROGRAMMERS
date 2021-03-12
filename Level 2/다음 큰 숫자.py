@@ -9,6 +9,7 @@ print(solution(78))
 
 
 # 내가 짠 코드와 로직은 같다.
+# while문으로 조건을 걸어 범위를 주지 않았다.
 def countone(n):
     return bin(n).count('1')
 
