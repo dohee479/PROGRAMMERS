@@ -6,3 +6,18 @@ def solution(n):
 
 
 print(solution(78))
+
+
+# 내가 짠 코드와 로직은 같다.
+def countone(n):
+    return bin(n).count('1')
+
+
+def nextBigNumber(n):
+    i = 1
+    while countone(n) != countone(n+i):
+        i += 1
+    return n + i
+
+
+print(nextBigNumber(78))
